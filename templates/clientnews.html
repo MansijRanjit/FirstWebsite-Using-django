@@ -1,3 +1,12 @@
-{% extends 'clientbase.html'%} {% block main%}
-<h>Supermansij is Back </h>
-{% endblock%}
+{% extends 'clientbase.html'%} 
+{% block main %}
+<h2>All News</h2>
+<ul>
+    {% for n in news %}
+      <li>
+        <a href="/news/{{n.id}}/">{{n.title}}</a>
+      </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

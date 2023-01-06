@@ -1,0 +1,13 @@
+{% extends 'clientbase.html'%}
+
+{%block main%}
+<p>{{newsdetails.title}}
+</p>
+{{newsdetails.content}}
+<br>
+<br>
+<a href="/news/create/{{newsdetails.id}}/">Update</a>
+<br>
+<a href="/news/delete/{{newsdetails.id}}/">Delete</a>
+
+{%endblock%}
