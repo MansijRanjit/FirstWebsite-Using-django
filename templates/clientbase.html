@@ -11,6 +11,11 @@
       crossorigin="anonymous"
     />
     <title>About</title>
+    <style>
+      .active{
+        color: red!important;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -30,30 +35,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link{% block home%}{%endblock%} " aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'everestapp:clientabout' %}"
+              <a class="nav-link{% block about%}{%endblock%}" href="{% url 'everestapp:clientabout' %}"
                 >About</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'everestapp:clientservice' %}"
+              <a class="nav-link{% block service%}{%endblock%} " href="{% url 'everestapp:clientservice' %}"
                 >Service</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'everestapp:clientcontact' %}"
+              <a class="nav-link{% block contact%}{%endblock%}" href="{% url 'everestapp:clientcontact' %}"
                 >Contact</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'everestapp:clientnews' %}"
+              <a class="nav-link{% block news%}{%endblock%}" href="{% url 'everestapp:clientnews' %}"
                 >News</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'everestapp:clientnewscreate' %}"
+              <a class="nav-link{% block createnews%}{%endblock%}" href="{% url 'everestapp:clientnewscreate' %}"
                 >Create News</a
               >
             </li>
