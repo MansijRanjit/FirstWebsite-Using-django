@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-
+from django_summernote.widgets import SummernoteWidget
 class ClientNewsCreateForm(forms.ModelForm):
   class Meta:
     model = News
@@ -10,12 +10,12 @@ class ClientNewsCreateForm(forms.ModelForm):
         'class':'form-control',
       }),
       'category': forms.Select(),
-      # 'content': SummernoteWidget(attrs={
-      #   'summernote':{
-      #     'class':'form-control form-control-rounded',
-      #     'placeholder' : 'Page Description',
-      #   }
-      # }),
+      'content': SummernoteWidget(attrs={
+        'summernote':{
+          'class':'form-control form-control-rounded',
+          'placeholder' : 'Page Description',
+        }
+      }),
       'image' : forms.ClearableFileInput(),
     }
 

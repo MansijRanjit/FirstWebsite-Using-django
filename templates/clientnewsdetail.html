@@ -3,7 +3,7 @@
 {%block main%}
 <p>{{newsdetails.title}}
 </p>
-{{newsdetails.content}}
+{{newsdetails.content|safe}}
 <br>
 <br>
 <a href="/news/create/{{newsdetails.id}}/">Update</a>

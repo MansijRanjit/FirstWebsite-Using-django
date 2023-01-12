@@ -52,6 +52,16 @@ class AdminLoginView(FormView):
   #   else:
   #     return 
 
+class AdminLogoutView(View):
+  success_message = 'Logged out successfully'
+
+  def get(self,request, **kwargs):
+    if request.user.is_authenticated:
+      logout(request)
+      return redirect('everestapp:clienthome')
+    else:
+      raise Http404
+
 class ClientHomeView(TemplateView):
   template_name ="clienthome.html"
 

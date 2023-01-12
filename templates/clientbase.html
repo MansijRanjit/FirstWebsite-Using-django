@@ -39,29 +39,39 @@
             </li>
             <li class="nav-item">
               <a class="nav-link{% block about%}{%endblock%}" href="{% url 'everestapp:clientabout' %}"
-                >About</a
-              >
+                >About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link{% block service%}{%endblock%} " href="{% url 'everestapp:clientservice' %}"
-                >Service</a
-              >
+                >Service</a>
             </li>
             <li class="nav-item">
               <a class="nav-link{% block contact%}{%endblock%}" href="{% url 'everestapp:clientcontact' %}"
-                >Contact</a
-              >
+                >Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link{% block news%}{%endblock%}" href="{% url 'everestapp:clientnews' %}"
-                >News</a
-              >
+                >News</a>
             </li>
+
+            {% if request.user.username %}
+              <li class="nav-item">
+                <a class="nav-link{% block createnews%}{%endblock%}" href="{% url 'everestapp:clientnewscreate' %}"
+                  >Create News</a>
+              </li>
+            {% endif %}
+
+            {% if request.user.username %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'everestapp:adminlogout' %}"
+                  ><button>Logout</button></a>
+              </li>
+            {% else %}
             <li class="nav-item">
-              <a class="nav-link{% block createnews%}{%endblock%}" href="{% url 'everestapp:clientnewscreate' %}"
-                >Create News</a
-              >
+              <a class="nav-link" href="{% url 'everestapp:adminlogin' %}"
+                ><button>Login</button></a>
             </li>
+            {% endif %}
             <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"

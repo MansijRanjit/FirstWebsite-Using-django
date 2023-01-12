@@ -16,6 +16,8 @@ urlpatterns = [
   path("news/delete/<int:pk>/",ClientNewsDeleteView.as_view(),name="clientnewsdelete"),
   
   path("admin/login/",AdminLoginView.as_view(),name="adminlogin"),
+  path("admin/logout/",AdminLogoutView.as_view(),name="adminlogout"),
+
 
 
 
